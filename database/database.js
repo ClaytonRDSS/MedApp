@@ -1,0 +1,16 @@
+import mongoose from 'node:mongoose';
+
+
+mongoose.connect('mongodb://localhost:27017/med-app');
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'Connetion error: '));
+
+db.once(
+    'open', function() {
+        console.log('Banco de Dados Conectado Com Sucesso!');
+    }
+);
+
+export default db;
