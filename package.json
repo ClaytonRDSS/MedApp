@@ -1,0 +1,20 @@
+{
+  "name": "medapp",
+  "version": "1.0.0",
+  "description": "Projeto da Disciplina Programação-II",
+  "homepage": "https://github.com/ClaytonRDSS/MedApp#readme",
+  "bugs": {
+    "url": "https://github.com/ClaytonRDSS/MedApp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClaytonRDSS/MedApp.git"
+  },
+  "license": "ISC",
+  "author": "Clayton Roberto dos Santos",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
