@@ -3,6 +3,10 @@ import { mongoose } from 'node:mongoose';
 const Schema = mongoose.Schema;
 
 const pacienteSchema = new Schema({
+    date: {
+        type: Date,
+        require: [true, "Os dados são necessários para o agendamento."]
+    },
     name: {
         type: String,
          required: [true, "Os dados são necessários para o agendamento."]
