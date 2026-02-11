@@ -1,12 +1,12 @@
 import { express } from 'node:express';
-import ConcultaService from '../services/ConsultaService';
+import ConsultaService from '../services/ConsultaService';
 
 
 let router = express.Router();
 
 router.get('/consulta', async(req, res) => {
     try {
-        const consulta = await ConcultaService.getAllConsulta();
+        const consulta = await ConsultaService.getAllConsulta();
         res.send(consulta);
     } catch(error) {
         console.log(error);
@@ -17,7 +17,7 @@ router.get('/consulta', async(req, res) => {
 router.get('/consulta/: id', async(req, res) => {
     const {id} = req.params;
     try {
-        const consulta = await ConcultaService.getConsulta(id);
+        const consulta = await ConsultaService.getConsulta(id);
         res.send(consulta);
     } catch(error) {
         console.log(error);
@@ -28,7 +28,7 @@ router.get('/consulta/: id', async(req, res) => {
 router.post('/postConsulta', async(req, res) => {
     const {data, medicoId, pacienteId} = req.body;
     try {
-        const consulta = await ConcultaService.saveConsulta(data, medicoId, pacienteId);
+        const consulta = await ConsultaService.saveConsulta(data, medicoId, pacienteId);
         res.send(consulta);
     } catch(error) {
         console.log(error);
@@ -40,7 +40,7 @@ router.put('/consulta/:id', async(req, res) => {
     const {id} = req.params;
     const {data, medicoId, pacienteId} = req.body;
     try {
-        const consulta = await ConcultaService.updateConsulta(id, {data, medicoId, pacienteId});
+        const consulta = await ConsultaService.updateConsulta(id, {data, medicoId, pacienteId});
         res.send(consulta);
     } catch(error) {
         console.log(error);
@@ -48,10 +48,10 @@ router.put('/consulta/:id', async(req, res) => {
     }
 });
 
-router.delete('/Consulta/:id', async(req, res) => {
+router.delete('/consulta/:id', async(req, res) => {
     const {id} = req.params;
     try {
-        const consulta = await ConcultaService.deleteConsulta(id);
+        const consulta = await ConsultaService.deleteConsulta(id);
         res.send(consulta);
     } catch(error) {
         console.log(error);

@@ -5,7 +5,7 @@ const getAllConsulta = async () => {
 }
 
 const getConsulta = async (id) => {
-    return ConsultaRepository.geConsulta(id); 
+    return ConsultaRepository.getConsulta(id); 
 }
 
 const saveConsulta = async ({data, medicoId, pacinteId}) => {
