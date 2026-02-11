@@ -7,7 +7,7 @@ import pacienteController from './PacienteController.js';
 import receitaController from './Receita.Controller.js';
 
 
-let router = express.Router();
+const router = express.Router();
 
 router.get("/", function(req, res) {
     console.log("Oi!");
