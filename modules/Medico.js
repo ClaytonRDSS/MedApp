@@ -3,7 +3,7 @@ import {mongoose} from 'node:mongoose';
 const Schema = mongoose.Schema;
 
 const medicoSchema = new Schema( {
-    medicoID: {
+    date: {
         type: Date,
         required: [true, "Os dados são necessários para o agendamento."]
     },
