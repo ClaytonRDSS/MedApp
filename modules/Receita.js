@@ -20,8 +20,7 @@ const receitaSchema = new Schema({
          required: [true, "Os dados são necessários para o agendamento."]
     }, 
     instrucoes: {
-        type: String,
-         required: [true, "Os dados são necessários para o agendamento."]
+        type: String
     },
     createdAt: {
         type: Date,
