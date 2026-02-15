@@ -1,4 +1,4 @@
-import ReceitaRepository from "../repositories/ReceitaRepository";
+import ReceitaRepository from "../repositories/ReceitaRepository.js";
 
 const getAllReceita = async () => {
     return ReceitaRepository.getAllReceita(); 

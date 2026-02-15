@@ -1,5 +1,5 @@
-import { express } from 'node:express';
-import MedicoService from '../services/MedicoService';
+import  express  from 'express';
+import MedicoService from '../services/MedicoService.js';
 
 let router = express.Router();
 
@@ -58,4 +58,4 @@ router.delete('/medico/:id', async(req, res) => {
     }
 });
 
-export default router();
+export default router;

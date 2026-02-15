@@ -1,4 +1,4 @@
-import ConsultaRepository from "../repositories/ConsultaRepository";
+import ConsultaRepository from "../repositories/ConsultaRepository.js";
 
 const getAllConsulta = async () => {
     return ConsultaRepository.getAllConsulta(); 

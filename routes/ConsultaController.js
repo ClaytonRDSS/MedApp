@@ -1,5 +1,5 @@
-import { express } from 'node:express';
-import ConsultaService from '../services/ConsultaService';
+import express  from 'express';
+import ConsultaService from '../services/ConsultaService.js';
 
 
 let router = express.Router();
@@ -14,7 +14,7 @@ router.get('/consulta', async(req, res) => {
     }
 });
 
-router.get('/consulta/: id', async(req, res) => {
+router.get('/consulta/:id', async(req, res) => {
     const {id} = req.params;
     try {
         const consulta = await ConsultaService.getConsulta(id);
@@ -59,4 +59,4 @@ router.delete('/consulta/:id', async(req, res) => {
     }
 });
 
-export default router();
+export default router;

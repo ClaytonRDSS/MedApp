@@ -1,15 +1,16 @@
-import { express } from 'node:express';
-import { pkg } from 'node:body-parser';
-import { router } from './routes/router';
+import express from 'express';
+import pkg from 'body-parser';
+import router from './routes/router.js';
+import db from './database/database.js'; 
 
 const app = express();
 const { json, urlencoded } = pkg;
 
 app.use(json());
-app.user(urlencoded({extends: true}));
+app.use(urlencoded({extended: true}));
 
-app.listen(3000, () => {
+app.listen(3000, function() {
     console.log("Rodando na Porta 3000");
 });
 
-app.user('/', router);
+app.use('/', router);

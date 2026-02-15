@@ -1,4 +1,4 @@
-import { Paciente } from '../modules/Paciente.js'
+import  Paciente  from '../modules/Paciente.js'
 
 const getAllPaciente = async () => {
     return await Paciente.find();

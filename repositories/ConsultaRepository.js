@@ -1,4 +1,4 @@
-import { Consulta } from '../modules/Consulta.js';
+import Consulta  from '../modules/Consulta.js';
 
 const getAllConsulta = async () => {
     return await Consulta.find();
