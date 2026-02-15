@@ -1,4 +1,4 @@
-import { Receita } from '../modules/Receita.js';
+import  Receita  from '../modules/Receita.js';
 
 const getAllReceita = async () => {
     return await Receita.find();

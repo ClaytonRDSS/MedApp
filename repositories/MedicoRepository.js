@@ -1,4 +1,4 @@
-import { Medico } from '../modules/Medico.js';
+import  Medico  from '../modules/Medico.js';
 
 const getAllMedico = async () => {
     return await Medico.find();

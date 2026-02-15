@@ -1,4 +1,4 @@
-import { express } from 'node:express';
+import  express  from 'express';
 import ReceitaService from '..//services/ReceitaService.js';
 
 
@@ -60,4 +60,4 @@ router.delete('/receita/:id', async(req, res) => {
     }
 });
 
-export default router();
+export default router;

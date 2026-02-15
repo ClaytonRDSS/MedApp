@@ -1,4 +1,4 @@
-import MedicoRepository from "../repositories/MedicoRepositoryRepository";
+import MedicoRepository from "../repositories/MedicoRepository.js";
 
 const getAllMedico = async () => {
     return MedicoRepository.getAllMedico(); 
@@ -19,7 +19,7 @@ const updateMedico = async (id, {data, name, login, password, especialidadeMedic
 const deleteMedico = async (id) => {
     return MedicoRepository.deleteMedico(id); 
 }
-const concultaService = {
+const medicoService = {
     getAllMedico,
     getMedico,
     saveMedico,
@@ -27,4 +27,4 @@ const concultaService = {
     deleteMedico
 }
 
-export default MedicoService;
+export default medicoService;
