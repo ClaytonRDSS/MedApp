@@ -8,12 +8,12 @@ const getConsulta = async (id) => {
     return ConsultaRepository.getConsulta(id); 
 }
 
-const saveConsulta = async ({data, medicoId, pacinteId}) => {
-    return ConsultaRepository.saveConsulta({data, medicoId, pacinteId}); 
+const saveConsulta = async ({date, medicoId, pacienteId}) => {
+    return ConsultaRepository.saveConsulta({date, medicoId, pacienteId}); 
 }
 
-const updateConsulta = async (id, {data, medicoId, pacinteId}) => {
-    return ConsultaRepository.updateConsulta(id, {data, medicoId, pacinteId}); 
+const updateConsulta = async (id, {date, medicoId, pacienteId}) => {
+    return ConsultaRepository.updateConsulta(id, {date, medicoId, pacienteId}); 
 }
 
 const deleteConsulta = async (id) => {

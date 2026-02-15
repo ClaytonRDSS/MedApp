@@ -12,18 +12,18 @@ const getReceita = async (id) => {
     }
 }
 
-const saveReceita = async ({data, consultaId, medicamento, dosagemMedicamento, instrucoes}) => {
+const saveReceita = async ({date, consultaId, medicamento, dosagemMedicamento, instrucoes}) => {
     try{
-        const receita = new Receita({data, consultaId, medicamento, dosagemMedicamento, instrucoes});
+        const receita = new Receita({date, consultaId, medicamento, dosagemMedicamento, instrucoes});
         return await receita.save();
     } catch (error) {
         throw new Error(error);
     }
 }
 
-const updateReceita = async (id, {data, consultaId, medicamento, dosagemMedicamento, instrucoes}) => {
+const updateReceita = async (id, {date, consultaId, medicamento, dosagemMedicamento, instrucoes}) => {
     try {
-        return await Receita.findByIdAndUpdate(id, {data, consultaId, medicamento, dosagemMedicamento, instrucoes}, {new: true});
+        return await Receita.findByIdAndUpdate(id, {date, consultaId, medicamento, dosagemMedicamento, instrucoes}, {new: true});
     } catch (error) {
         throw new Error(error);
         

@@ -12,18 +12,18 @@ const getPaciente = async (id) => {
     }
 }
 
-const savePaciente = async ({data, name, dataNascimento, email, telefone}) => {
+const savePaciente = async ({name, dataNascimento, email, telefone}) => {
     try{
-        const paciente = new Paciente({data, name, dataNascimento, email, telefone});
+        const paciente = new Paciente({name, dataNascimento, email, telefone});
         return await paciente.save();
     } catch (error) {
         throw new Error(error);
     }
 }
 
-const updatePaciente = async (id, {data, name, dataNascimento, email, telefone}) => {
+const updatePaciente = async (id, {name, dataNascimento, email, telefone}) => {
     try {
-        return await Paciente.findByIdAndUpdate(id, {data, name, dataNascimento, email, telefone}, {new: true});
+        return await Paciente.findByIdAndUpdate(id, {name, dataNascimento, email, telefone}, {new: true});
     } catch (error) {
         throw new Error(error);
         

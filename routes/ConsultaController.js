@@ -14,7 +14,7 @@ router.get('/consulta', async(req, res) => {
     }
 });
 
-router.get('/consulta/:id', async(req, res) => {
+router.get('/getConsulta/:id', async(req, res) => {
     const {id} = req.params;
     try {
         const consulta = await ConsultaService.getConsulta(id);
@@ -26,9 +26,9 @@ router.get('/consulta/:id', async(req, res) => {
 });
 
 router.post('/postConsulta', async(req, res) => {
-    const {data, medicoId, pacienteId} = req.body;
+    const {date, medicoId, pacienteId} = req.body;
     try {
-        const consulta = await ConsultaService.saveConsulta(data, medicoId, pacienteId);
+        const consulta = await ConsultaService.saveConsulta({date, medicoId, pacienteId});
         res.send(consulta);
     } catch(error) {
         console.log(error);
@@ -38,9 +38,9 @@ router.post('/postConsulta', async(req, res) => {
 
 router.put('/consulta/:id', async(req, res) => {
     const {id} = req.params;
-    const {data, medicoId, pacienteId} = req.body;
+    const {date, medicoId, pacienteId} = req.body;
     try {
-        const consulta = await ConsultaService.updateConsulta(id, {data, medicoId, pacienteId});
+        const consulta = await ConsultaService.updateConsulta(id, {date, medicoId, pacienteId});
         res.send(consulta);
     } catch(error) {
         console.log(error);
