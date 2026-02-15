@@ -15,7 +15,7 @@ router.get('/receita', async(req, res) => {
     }
 });
 
-router.get('/receita/:id', async(req, res) => {
+router.get('/getReceita/:id', async(req, res) => {
     const {id} = req.params;
     try {
         const receita = await ReceitaService.getReceita(id);
@@ -27,9 +27,9 @@ router.get('/receita/:id', async(req, res) => {
 });
 
 router.post('/postReceita', async(req, res) => {
-    const {data, consultaId, medicamento, dosagemMedicamento, instrucoes} = req.body;
+    const {date, consultaId, medicamento, dosagemMedicamento, instrucoes} = req.body;
     try {
-        const receita = await ReceitaService.saveReceita({data, consultaId, medicamento, dosagemMedicamento, instrucoes});
+        const receita = await ReceitaService.saveReceita({date, consultaId, medicamento, dosagemMedicamento, instrucoes});
         res.send(receita);
     } catch(error) {
         console.log(error);
@@ -39,9 +39,9 @@ router.post('/postReceita', async(req, res) => {
 
 router.put('/receita/:id', async(req, res) => {
     const {id} = req.params;
-    const {data, consultaId, medicamento, dosagemMedicamento, instrucoes} = req.body;
+    const {date, consultaId, medicamento, dosagemMedicamento, instrucoes} = req.body;
     try {
-        const receita = await ReceitaService.updateReceita(id, {data, consultaId, medicamento, dosagemMedicamento, instrucoes});
+        const receita = await ReceitaService.updateReceita(id, {date, consultaId, medicamento, dosagemMedicamento, instrucoes});
         res.send(receita);
     } catch(error) {
         console.log(error);

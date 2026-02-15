@@ -2,7 +2,7 @@ import  express  from 'express';
 import PacienteService from '../services/PacienteService.js';
 
 let router = express.Router();
-router.get('/paciente', async(req, res) => {
+router.get('/pacientes', async(req, res) => {
     try {
         const paciente = await PacienteService.getAllPaciente();
         res.send(paciente);
@@ -12,7 +12,7 @@ router.get('/paciente', async(req, res) => {
     }
 });
 
-router.get('/paciente/:id', async(req, res) => {
+router.get('/getPaciente/:id', async(req, res) => {
     const {id} = req.params;
     try {
         const paciente = await PacienteService.getPaciente(id);

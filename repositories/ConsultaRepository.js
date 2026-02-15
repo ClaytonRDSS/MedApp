@@ -12,18 +12,18 @@ const getConsulta = async (id) => {
     }
 }
 
-const saveConsulta = async ({data, medicoId, pacinteId}) => {
+const saveConsulta = async ({date, medicoId, pacienteId}) => {
     try{
-        const receita = new Consulta({data, medicoId, pacinteId});
-        return await receita.save();
+        const consulta = new Consulta({date, medicoId, pacienteId});
+        return await consulta.save();
     } catch (error) {
         throw new Error(error);
     }
 }
 
-const updateConsulta = async (id, {data, medicoId, pacinteId}) => {
+const updateConsulta = async (id, {date, medicoId, pacienteId}) => {
     try {
-        return await Consulta.findByIdAndUpdate(id, {data, medicoId, pacinteId}, {new: true});
+        return await Consulta.findByIdAndUpdate(id, {date, medicoId, pacienteId}, {new: true});
     } catch (error) {
         throw new Error(error);
         

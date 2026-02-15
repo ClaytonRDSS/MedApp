@@ -1,4 +1,5 @@
 import  express  from 'express';
+import bcrypt from 'bcrypt';
 import MedicoService from '../services/MedicoService.js';
 
 let router = express.Router();
@@ -13,7 +14,7 @@ router.get('/medico', async(req, res) => {
     }
 });
 
-router.get('/medico/:id', async(req, res) => {
+router.get('/getMedico/:id', async(req, res) => {
     const {id} = req.params;
     try {
         const medico = await MedicoService.getMedico(id);
@@ -27,7 +28,8 @@ router.get('/medico/:id', async(req, res) => {
 router.post('/postMedico', async(req, res) => {
     const {data, name, login, password, especialidadeMedica, registroMedico, email, telefone} = req.body;
     try {
-        const medico = await MedicoService.saveMedico({data, name, login, password, especialidadeMedica, registroMedico, email, telefone});
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const medico = await MedicoService.saveMedico({data, name, login, password: hashedPassword, especialidadeMedica, registroMedico, email, telefone});
         res.send(medico);
     } catch(error) {
         console.log(error);
