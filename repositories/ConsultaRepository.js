@@ -32,7 +32,7 @@ const updateConsulta = async (id, {date, medicoId, pacienteId}) => {
 
 const deleteConsulta = async (id) => {
     try{
-        return await Consulta.findByIdAndUpdate(id);
+        return await Consulta.findByIdAndDelete(id);
     } catch (error) {
         throw new Error(error);
     }

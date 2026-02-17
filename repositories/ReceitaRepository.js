@@ -32,7 +32,7 @@ const updateReceita = async (id, {date, consultaId, medicamento, dosagemMedicame
 
 const deleteReceita = async (id) => {
     try{
-        return await Receita.findByIdAndUpdate(id);
+        return await Receita.findByIdAndDelete(id);
     } catch (error) {
         throw new Error(error);
     }
