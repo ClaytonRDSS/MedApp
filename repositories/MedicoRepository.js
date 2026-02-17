@@ -32,7 +32,7 @@ const updateMedico = async (id, {data, name, login, password, especialidadeMedic
 
 const deleteMedico = async (id) => {
     try{
-        return await Medico.findByIdAndUpdate(id);
+        return await Medico.findByIdAndDelete(id);
     } catch (error) {
         throw new Error(error);
     }

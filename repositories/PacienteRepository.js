@@ -32,7 +32,7 @@ const updatePaciente = async (id, {name, dataNascimento, email, telefone}) => {
 
 const deletePaciente = async (id) => {
     try{
-        return await Paciente.findByIdAndUpdate(id);
+        return await Paciente.findByIdAndDelete(id);
     } catch (error) {
         throw new Error(error);
     }
