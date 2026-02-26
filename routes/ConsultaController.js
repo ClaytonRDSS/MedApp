@@ -63,11 +63,12 @@ router.put('/remarcar/:id', async(req, res) => {
     const {id} = req.params;
     const {date} = req.body;
     try {
-        //Buscar o Id
-        const consulta = await ConsultaService.getConsulta(id);
 
-        //Atualizar a Data
+        //busca a receita pelo ID.
+        let consulta = await ConsultaService.getConsulta(id);
         consulta.date = date;
+
+        //Atualização da data da consulta.
         consulta = await ConsultaService.updateConsulta(id, {date});
         res.send(consulta);
     }catch (error) {
