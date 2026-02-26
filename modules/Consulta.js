@@ -9,11 +9,27 @@ const consultaSchema = new Schema( {
     },
     medicoId: {
         type: String,
-        required: [true, "Os dados são necessários para o agendamento."] 
+        required: [true, "Os dados são necessários para o agendamento."],
+        validate: {
+            validator: function(v) {
+                //Convertendo uma string que vai ser devolvida pela requisição em um Objeto ID para ser encontrado no banco.
+                const id = new mongoose.Types.ObjectId(v);
+                return Medico.exists({_id: id});
+            },
+            message: props => `Id do Medico ${props.value} não encontrado`
+        } 
     },
     pacienteId: {
         type: String,
-        required: [true, "Os dados são necessários para o agendamento."]
+        required: [true, "Os dados são necessários para o agendamento."],
+         validate: {
+            validator: function(v) {
+                //Convertendo uma string que vai ser devolvida pela requisição em um Objeto ID para ser encontrado no banco.
+                const id = new mongoose.Types.ObjectId(v);
+                return Paciente.exists({_id: id});
+            },
+            message: props => `Id do Paciente ${props.value} não encontrado`
+        }
     },
     createdAt: {
         type: Date,
