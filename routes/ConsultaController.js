@@ -59,13 +59,13 @@ router.delete('/consulta/:id', async(req, res) => {
     }
 });
 
-router.put('/remarcar/: id', async(req, res) => {
+router.put('/remarcar/:id', async(req, res) => {
     const {id} = req.params;
     const {date} = req.body;
     try {
         //Buscar o Id
         const consulta = await ConsultaService.getConsulta(id);
-        
+
         //Atualizar a Data
         consulta.date = date;
         consulta = await ConsultaService.updateConsulta(id, {date});
