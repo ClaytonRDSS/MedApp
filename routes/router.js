@@ -9,6 +9,8 @@ import medicoService from '../services/MedicoService.js';
 import bcrypt from 'bcrypt'
 import veficarToken from '../middleware/authMiddleware.js';
 
+import jwt from 'jsonwebtoken';
+
 
 const router = express.Router();
 
