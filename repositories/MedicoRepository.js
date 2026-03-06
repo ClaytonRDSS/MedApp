@@ -38,12 +38,22 @@ const deleteMedico = async (id) => {
     }
 }
 
+//login
+const getMedicoLogin = async (login) => {
+    try{
+        return await Medico.findOne({'Login': login});
+    }catch(error) {
+        throw new error(error)
+    }
+}
+
 const medicoRepository = {
     getAllMedico,
     getMedico,
     saveMedico,
     updateMedico,
-    deleteMedico
+    deleteMedico,
+    getMedicoLogin
 }
 
 export default medicoRepository;
